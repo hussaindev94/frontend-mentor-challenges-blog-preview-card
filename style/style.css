@@ -1,3 +1,13 @@
+/*Using Font files*/
+@font-face {
+  font-family: "Figtree";
+  src: url("../assets/fonts/Figtree-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
 /*Define the variables*/
 :root {
   --bg-color: hsl(47, 88%, 63%);
@@ -13,6 +23,10 @@ body {
   background: var(--bg-color);
   overflow-x: hidden;
   box-sizing: border-box;
+  font-family: "Figtree", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+    position: relative;
 }
 
 /*Main Style*/
@@ -37,8 +51,9 @@ body {
   gap: 24px 0px;
   width: 360px;
   box-shadow: 8px 8px 0 0 black;
-  &:hover {
-    cursor: pointer;
+  cursor: pointer;
+  &:hover h1 {
+    color: var(--bg-color);
   }
 }
 /*Card Image Container Style*/
@@ -57,30 +72,54 @@ body {
 }
 /*Tag Button Style*/
 .tag {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    padding: 4px 12px;
-    border-radius: 4px;
-    background: var(--bg-color);
-    width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: var(--bg-color);
+  width: fit-content;
+  font-size: clamp(
+            12px,
+            calc(12px + (14px - 12px) * ((100vw - 360px)/(1440px - 360px))),
+            14px);
+  font-weight: 800;
+  line-height: 150%;
 }
 /*Tag Info Style*/
 .tag-info {
   margin: 10px 0px 0px 0px;
   color: var(--secondary-fonr-color);
+  font-size: clamp(
+            12px,
+            calc(12px + (14px - 12px) * ((100vw - 360px)/(1440px - 360px))),
+            14px);
+  font-weight: 500;
+  line-height: 150%;
 }
 /*Card Header Style*/
 .card-info-header {
   margin: 10px 0px;
-  color: var(--bg-color);
+  color: var(--secondary-fonr-color);
+  font-size: clamp(
+            20px,
+            calc(20px + (24px - 20px) * ((100vw - 360px)/(1440px - 360px))),
+            24px);
+  font-weight: 800;
+  line-height: 150%;
+  transform: color 5s ease-in;
 }
 /*Card Info Text Style*/
 .card-info-text {
   margin: 0px;
   color: var(--primary-font-color);
-  /* width: 40ch; */
+  font-size: clamp(
+            14px,
+            calc(14px + (16px - 14px) * ((100vw - 360px)/(1440px - 360px))),
+            16px);
+  font-weight: 500;
+  line-height: 150%;
 }
 /*User info Style*/
 .user-info {
@@ -88,4 +127,24 @@ body {
   display: flex;
   align-items: center;
   gap: 12px;
+  & h2{
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 150%;
+  }
+}
+
+footer{
+position: fixed;
+width: 100%;
+bottom: -15px;
+display: flex;
+align-items: center;
+justify-content: center;
+& ul{
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
 }
