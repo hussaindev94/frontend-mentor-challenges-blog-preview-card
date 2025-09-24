@@ -29,25 +29,15 @@ body {
   position: relative;
 
   /*Main Style*/
-  & .main {
+  .main {
     display: grid;
     place-items: center;
     height: 100vh;
 
-    /*Common Styles applied to different element*/
-    .tag,
-    .tag-info {
-      font-size: clamp(
-        12px,
-        calc(12px + (14px - 12px) * ((100vw - 360px) / (1440px - 360px))),
-        14px
-      );
-    }
-
     /*Section Style*/
-    & .card-section {
+    .card-section {
       /*Card Style*/
-      & .card {
+      .card {
         border: 1px solid var(--secondary-fonr-color);
         background: var(--card-color);
         padding: 24px;
@@ -62,22 +52,31 @@ body {
         cursor: pointer;
 
         /*Card Image Container Style*/
-        & .card-image-container {
+        .card-image-container {
           display: flex;
           align-items: center;
           align-self: stretch;
 
           /*Card Image Style*/
-          & .card-image {
+          .card-image {
             width: 100%;
             border-radius: 10px;
           }
         }
-
         /*Card info Style*/
-        & .card-info {
+        .card-info {
+          /*Common Styles applied to different element*/
+          .tag,
+          .tag-info {
+            font-size: clamp(
+              12px,
+              calc(12px + (14px - 12px) * ((100vw - 360px) / (1440px - 360px))),
+              14px
+            );
+          }
+
           /*Tag Button Style*/
-          & .tag {
+          .tag {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -90,28 +89,32 @@ body {
             line-height: 150%;
           }
           /*Tag Info Style*/
-          & .tag-info {
+          .tag-info {
             margin: 10px 0px 0px 0px;
             color: var(--secondary-fonr-color);
             font-weight: 500;
             line-height: 150%;
           }
+
           /*Card Header Style*/
           .card-info-header {
             margin: 10px 0px;
             font-weight: 800;
             line-height: 150%;
             transition: color 0.1s ease-in;
-            color: var(--secondary-fonr-color);
             font-size: clamp(
               20px,
               calc(20px + (24px - 20px) * ((100vw - 360px) / (1440px - 360px))),
               24px
             );
+            & .card-link-page {
+              text-decoration: none;
+              color: var(--secondary-fonr-color);
+            }
           }
 
           /*Card Info Text Style*/
-          & .card-info-text {
+          .card-info-text {
             width: 35ch;
             margin: 0px;
             color: var(--primary-font-color);
@@ -124,8 +127,9 @@ body {
             line-height: 150%;
           }
         }
+
         /*User info Style*/
-        & .user-info {
+        .user-info {
           width: 100%;
           display: flex;
           align-items: center;
@@ -137,24 +141,24 @@ body {
           }
         }
       }
-      .card:hover .card-info-header {
+      .card:hover .card-info-header .card-link-page,
+      .card .card-info-header .card-link-page:focus {
         color: var(--bg-color);
       }
     }
   }
-}
-
-footer {
-  position: fixed;
-  width: 100%;
-  bottom: -15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  & ul {
-    list-style: none;
+  footer {
+    position: fixed;
+    width: 100%;
+    bottom: -15px;
     display: flex;
-    flex-direction: row;
-    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    & ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      gap: 5px;
+    }
   }
 }
