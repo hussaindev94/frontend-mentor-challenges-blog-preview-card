@@ -36,6 +36,7 @@ body {
 
     /*Section Style*/
     .card-section {
+      padding: 20px;
       /*Card Style*/
       .card {
         border: 1px solid var(--secondary-fonr-color);
@@ -70,7 +71,7 @@ body {
           .tag-info {
             font-size: clamp(
               12px,
-              calc(12px + (14px - 12px) * ((100vw - 360px) / (1440px - 360px))),
+              calc(12px + (14 - 12) * ((100vw - 360px) / (1440 - 360))),
               14px
             );
           }
@@ -104,7 +105,7 @@ body {
             transition: color 0.1s ease-in;
             font-size: clamp(
               20px,
-              calc(20px + (24px - 20px) * ((100vw - 360px) / (1440px - 360px))),
+              calc(20px + (24 - 20) * ((100vw - 360px) / (1440 - 360))),
               24px
             );
             & .card-link-page {
@@ -120,7 +121,7 @@ body {
             color: var(--primary-font-color);
             font-size: clamp(
               14px,
-              calc(14px + (16px - 14px) * ((100vw - 360px) / (1440px - 360px))),
+              calc(14px + (16 - 14) * ((100vw - 360px) / (1440 - 360))),
               16px
             );
             font-weight: 500;
@@ -147,18 +148,26 @@ body {
       }
     }
   }
-  footer {
-    position: fixed;
+}
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 1.5vh;
+
+  & ul {
+    padding: 0;
+    margin: 0;
     width: 100%;
-    bottom: -15px;
+    list-style: none;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    & ul {
-      list-style: none;
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
-    }
+    gap: 5px;
+    font-size: clamp(
+      14px,
+      calc(14px + (16 - 14) * ((100vw - 360px) / (1440 - 360))),
+      16px
+    );
   }
 }
