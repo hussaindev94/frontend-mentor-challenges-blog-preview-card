@@ -50,6 +50,7 @@ body {
         flex-shrink: 0;
         gap: 24px 0px;
         width: 360px;
+        height: 474px;
         box-shadow: 8px 8px 0 0 black;
         cursor: pointer;
 
