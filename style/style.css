@@ -37,6 +37,7 @@ body {
     /*Section Style*/
     .card-section {
       padding: 20px;
+      height: fit-content;
       /*Card Style*/
       .card {
         border: 1px solid var(--secondary-fonr-color);
